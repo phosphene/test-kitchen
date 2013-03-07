@@ -79,7 +79,7 @@ module TestKitchen
           }
 
           env = ::Vagrant::Environment.new(options)
-          env.load!
+
           env
         end
       end
