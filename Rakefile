@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require 'bundler/gem_tasks'
 require 'rake/testtask'
 require 'cucumber'
@@ -66,3 +67,20 @@ else
 end
 
 task :default => [:test, :quality]
+=======
+#!/usr/bin/env rake
+require 'rubygems'
+require 'bundler/gem_tasks'
+require 'rake/testtask'
+require 'cucumber/rake/task'
+
+task :default => [:test, :features]
+
+Rake::TestTask.new do |t|
+  t.pattern = 'spec/**/*_spec.rb'
+end
+
+Cucumber::Rake::Task.new(:features) do |t|
+  t.cucumber_opts = ['-f', 'pretty', 'features']
+end
+>>>>>>> d042cbc92b823978d09bb8d341a527c09ce3c68f

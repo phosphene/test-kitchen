@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+<<<<<<< HEAD
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'kitchen/version'
@@ -40,4 +41,28 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'simplecov', '~> 0.7'
   gem.add_development_dependency 'tailor',    '~> 1.2'
   gem.add_development_dependency 'yard',      '~> 0.8'
+=======
+require File.expand_path('../lib/test-kitchen/version', __FILE__)
+
+Gem::Specification.new do |s|
+  s.name          = "test-kitchen"
+  s.version       = TestKitchen::VERSION
+  s.summary       = 'Easily provision test environments for integration testing with Chef.'
+  s.description   = s.summary
+  s.authors       = ['Seth Chisamore']
+  s.email         = ['schisamo@opscode.com']
+  s.license       = 'Apache'
+  s.homepage      = 'https://github.com/opscode/test-kitchen'
+  s.files         = Dir['LICENSE', 'bin/kitchen', 'config/*', 'cookbooks/**/*', 'lib/**/*']
+  s.executables   = 'kitchen'
+  s.require_paths = ['lib']
+  s.add_dependency('fog')
+  s.add_dependency('foodcritic', '>= 1.4.0')
+  s.add_dependency('hashr', '~> 0.0.20')
+  s.add_dependency('mixlib-cli', '~> 1.2.2')
+  s.add_dependency('highline', '>= 1.6.9')
+  s.add_dependency('vagrant', '~> 1.1.0.dev')
+  s.add_dependency('yajl-ruby', '~> 1.1.0')
+  s.add_dependency('librarian', '~> 0.0.20')
+>>>>>>> d042cbc92b823978d09bb8d341a527c09ce3c68f
 end

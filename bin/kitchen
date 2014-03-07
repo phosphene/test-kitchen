@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+<<<<<<< HEAD
 # -*- encoding: utf-8 -*-
 
 # Trap interrupts to quit cleanly. See
@@ -11,3 +12,11 @@ require 'kitchen/cli'
 require 'kitchen/errors'
 
 Kitchen.with_friendly_errors { Kitchen::CLI.start }
+=======
+
+$:.unshift(File.expand_path(File.join(File.dirname(__FILE__), "..", "lib")))
+#require 'bundler/setup'
+require 'test-kitchen'
+
+TestKitchen::CLI::Kitchen.new.run
+>>>>>>> d042cbc92b823978d09bb8d341a527c09ce3c68f
